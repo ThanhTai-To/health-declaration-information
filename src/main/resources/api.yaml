@@ -1,0 +1,140 @@
+openapi: 3.0.3
+info:
+  title: Health Declaration Information
+  description: Health Declaration Information Specification
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /health-declaration-information:
+    post:
+      tags:
+        - createInformation
+      summary: create the health declaration information
+      operationId: createInformation
+      requestBody:
+        description: Create the health declaration information
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HealthDeclarationInformationRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectSuccessResponse'
+
+components:
+  schemas:
+    HealthDeclarationInformationRequest:
+      type: object
+      required:
+        - fullName
+        - idCardNumber
+        - birthYear
+        - gender
+        - nationality
+        - address
+        - phone
+        - personalQuestionsLast14Days
+      properties:
+        isRegisterForOther:
+          type: boolean
+          default: false
+        fullName:
+          type: string
+          description: only allow words and spaces
+          pattern: '^\w+( +\w+)*$'
+          minLength: 1
+          maxLength: 100
+        idCardNumber:
+          type: string
+          pattern: '^\d{1,}'
+          maxLength: 25
+        birthYear:
+          type: string
+          pattern: '^(1(8|9)\d{2}|2\d{3})'
+        gender:
+          $ref: '#/components/schemas/Gender'
+        nationality:
+          $ref: '#/components/schemas/Nationality'
+        address:
+          $ref: '#/components/schemas/Address'
+        phone:
+          type: string
+          description: support from 9 numbers to 14 numbers
+          pattern: '^\d{9,14}$'
+        email:
+          type: string
+          pattern: '\S+@\S+\.\S+'
+        personalQuestionsLast14Days:
+          $ref: '#/components/schemas/PersonalQuestionsLast14Days'
+    Gender:
+      type: string
+      enum:
+        - MALE
+        - FEMALE
+        - OTHER
+    Nationality:
+      type: string
+      enum:
+        - VIETNAMESE
+        - AMERICAN
+        - ALBANIAN
+    Address:
+      type: object
+      required:
+        - province
+        - district
+        - ward
+        - street
+      properties:
+        province:
+          type: string
+          pattern: '^\w+( +\w+)*$'
+          minLength: 1
+          maxLength: 70
+        district:
+          type: string
+          pattern: '^\w+( +\w+)*$'
+          minLength: 1
+          maxLength: 70
+        ward:
+          type: string
+          pattern: '^\w+( +\w+)*$'
+          minLength: 1
+          maxLength: 70
+        street:
+          type: string
+          pattern: '^\w+( +\w+)*$'
+          minLength: 1
+          maxLength: 100
+    PersonalQuestionsLast14Days:
+      type: object
+      properties:
+        isTraveling:
+          type: boolean
+          default: false
+        isContactWithInfectedCovid19Person:
+          type: boolean
+          default: false
+        haveCovid19Manifestations:
+          type: boolean
+          default: false
+
+    ObjectSuccessResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        responseCode:
+          type: integer
+          format: int32
+        message:
+          type: string
+        timestamp:
+          type: string
+

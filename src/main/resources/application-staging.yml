@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://quarantineInformationManagement:60lOZ0mtXn5X6PTG@clustersingapore.cb0km.mongodb.net/health_declaration_information?retryWrites=true&w=majority

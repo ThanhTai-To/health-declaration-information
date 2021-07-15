@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: staging
+  main:
+    banner-mode: off
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
+
