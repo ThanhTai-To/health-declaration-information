@@ -1,9 +1,11 @@
 package com.thanhtai.healthdeclarationinformation.service;
 
-import com.thanhtai.healthdeclarationinformation.api.model.HealthDeclarationInformationRequest;
-import com.thanhtai.healthdeclarationinformation.model.HealthDeclarationInformation;
+import com.thanhtai.healthdeclarationinformation.api.model.HealthDeclarationInformationModel;
+import com.thanhtai.healthdeclarationinformation.api.model.ListHealthDeclarationInformation;
 
 public interface HealthDeclarationInformationService {
-    String createHealthDeclarationInformation(HealthDeclarationInformationRequest createRequest);
-    HealthDeclarationInformation getHealthDeclarationInformation(String id);
+    String createHealthDeclarationInformation(HealthDeclarationInformationModel createRequest);
+    void deleteHealthDeclarationInformationById(String id);
+    HealthDeclarationInformationModel getHealthDeclarationInformation(String id);
+    ListHealthDeclarationInformation getListHealthDeclarationInformation(Integer page);
 }

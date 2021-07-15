@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "2e23cecb-ff53-4b6b-86c2-2558bbcfcdba",
+		"name": "HealthDeclarationInformation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Local",
+			"item": [
+				{
+					"name": "Create health declaration information",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isRegisterForOther\": false,\n    \"fullName\": \"Nguyen Van A\",\n    \"idCardNumber\": \"245678\",\n    \"birthYear\": \"1911\",\n    \"gender\": \"OTHER\",\n    \"nationality\": \"VIETNAMESE\",\n    \"address\": {\n        \"province\": \"A\",\n        \"district\": \"B\",\n        \"ward\": \"C\",\n        \"street\": \"D\"\n    },\n    \"phone\": \"077654378892\",\n    \"email\": \"a@gmail.com\",\n    \"personalQuestionsLast14Days\": {\n        \"isTraveling\": false,\n        \"isContactWithInfectedCovid19Person\": false,\n        \"haveCovid19Manifestations\": false\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/health-declaration-information",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"health-declaration-information"
+							]
+						},
+						"description": "localhost:8080/health-declaration-information"
+					},
+					"response": [
+						{
+							"name": "Create health declaration information",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"isRegisterForOther\": false,\n    \"fullName\": \"Nguyen Van A\",\n    \"idCardNumber\": \"245678\",\n    \"birthYear\": \"1911\",\n    \"gender\": \"OTHER\",\n    \"nationality\": \"VIETNAMESE\",\n    \"address\": {\n        \"province\": \"A\",\n        \"district\": \"B\",\n        \"ward\": \"C\",\n        \"street\": \"D\"\n    },\n    \"phone\": \"077654378892\",\n    \"email\": \"a@gmail.com\",\n    \"personalQuestionsLast14Days\": {\n        \"isTraveling\": false,\n        \"isContactWithInfectedCovid19Person\": false,\n        \"haveCovid19Manifestations\": false\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/health-declaration-information",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"health-declaration-information"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Jul 2021 07:04:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"60efde06dde22a6b85b098ba\",\n    \"responseCode\": 200,\n    \"message\": \"Successfully\",\n    \"timestamp\": \"1626332678777\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get health declaration information",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/health-declaration-information/60efde06dde22a6b85b098ba",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"health-declaration-information",
+								"60efde06dde22a6b85b098ba"
+							]
+						},
+						"description": "{{local}}/health-declaration-information/60efdb5fcdcb3111596923bb"
+					},
+					"response": [
+						{
+							"name": "Get health declaration information",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/health-declaration-information/60efde06dde22a6b85b098ba",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"health-declaration-information",
+										"60efde06dde22a6b85b098ba"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Jul 2021 07:05:02 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"60efde06dde22a6b85b098ba\",\n    \"isRegisterForOther\": false,\n    \"fullName\": \"Nguyen Van A\",\n    \"idCardNumber\": \"245678\",\n    \"birthYear\": \"1911\",\n    \"gender\": \"OTHER\",\n    \"nationality\": \"VIETNAMESE\",\n    \"address\": {\n        \"province\": \"A\",\n        \"district\": \"B\",\n        \"ward\": \"C\",\n        \"street\": \"D\"\n    },\n    \"phone\": \"077654378892\",\n    \"email\": \"a@gmail.com\",\n    \"personalQuestionsLast14Days\": {\n        \"isTraveling\": false,\n        \"isContactWithInfectedCovid19Person\": false,\n        \"haveCovid19Manifestations\": false\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get list health declaration information",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/health-declaration-information?page=0",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"health-declaration-information"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						},
+						"description": "{{local}}/health-declaration-information?page=0"
+					},
+					"response": [
+						{
+							"name": "Get list health declaration information",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/health-declaration-information?page=0",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"health-declaration-information"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Jul 2021 08:02:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"currentPage\": 0,\n    \"totalPage\": 1,\n    \"totalElements\": 8,\n    \"healthDeclarationInformations\": [\n        {\n            \"id\": \"60efde06dde22a6b85b098ba\",\n            \"isRegisterForOther\": false,\n            \"fullName\": \"Nguyen Van A\",\n            \"idCardNumber\": \"245678\",\n            \"birthYear\": \"1911\",\n            \"gender\": \"OTHER\",\n            \"nationality\": \"VIETNAMESE\",\n            \"address\": {\n                \"province\": \"A\",\n                \"district\": \"B\",\n                \"ward\": \"C\",\n                \"street\": \"D\"\n            },\n            \"phone\": \"077654378892\",\n            \"email\": \"a@gmail.com\",\n            \"personalQuestionsLast14Days\": {\n                \"isTraveling\": false,\n                \"isContactWithInfectedCovid19Person\": false,\n                \"haveCovid19Manifestations\": false\n            }\n        },\n        {\n            \"id\": \"60efdcc63db96477d5ffc2aa\",\n            \"isRegisterForOther\": false,\n            \"fullName\": \"Nguyen Van A\",\n            \"idCardNumber\": \"245678\",\n            \"birthYear\": \"1911\",\n            \"gender\": \"OTHER\",\n            \"nationality\": \"VIETNAMESE\",\n            \"address\": {\n                \"province\": \"A\",\n                \"district\": \"B\",\n                \"ward\": \"C\",\n                \"street\": \"D\"\n            },\n            \"phone\": \"0776543782\",\n            \"email\": \"a@gmail.com\",\n            \"personalQuestionsLast14Days\": {\n                \"isTraveling\": false,\n                \"isContactWithInfectedCovid19Person\": false,\n                \"haveCovid19Manifestations\": false\n            }\n        },\n        {\n            \"id\": \"60efdb5fcdcb3111596923bb\",\n            \"isRegisterForOther\": false,\n            \"fullName\": \"Nguyen Van A\",\n            \"idCardNumber\": \"245678\",\n            \"birthYear\": \"1911\",\n            \"gender\": \"OTHER\",\n            \"nationality\": \"VIETNAMESE\",\n            \"address\": {\n                \"province\": \"A\",\n                \"district\": \"B\",\n                \"ward\": \"C\",\n                \"street\": \"D\"\n            },\n            \"phone\": \"034567823712\",\n            \"email\": \"a@gmail.com\",\n            \"personalQuestionsLast14Days\": {\n                \"isTraveling\": false,\n                \"isContactWithInfectedCovid19Person\": false,\n                \"haveCovid19Manifestations\": false\n            }\n        },\n        {\n            \"id\": \"60ef11a041bb764076208faf\",\n            \"isRegisterForOther\": false,\n            \"fullName\": \"Nguyen Van A\",\n            \"idCardNumber\": \"245678\",\n            \"birthYear\": \"1911\",\n            \"gender\": \"OTHER\",\n            \"nationality\": \"VIETNAMESE\",\n            \"address\": {\n                \"province\": \"A\",\n                \"district\": \"B\",\n                \"ward\": \"C\",\n                \"street\": \"D\"\n            },\n            \"phone\": \"034567823112\",\n            \"email\": \"a@gmail.com\",\n            \"personalQuestionsLast14Days\": {\n                \"isTraveling\": false,\n                \"isContactWithInfectedCovid19Person\": false,\n                \"haveCovid19Manifestations\": false\n            }\n        },\n        {\n            \"id\": \"60ef081ce960174817f12c60\",\n            \"isRegisterForOther\": false,\n            \"fullName\": \"Nguyen Van A\",\n            \"idCardNumber\": \"245678\",\n            \"birthYear\": \"1911\",\n            \"gender\": \"OTHER\",\n            \"nationality\": \"VIETNAMESE\",\n            \"address\": {\n                \"province\": \"A\",\n                \"district\": \"B\",\n                \"ward\": \"C\",\n                \"street\": \"D\"\n            },\n            \"phone\": \"03456782311\",\n            \"email\": \"a@gmail.com\",\n            \"personalQuestionsLast14Days\": {\n                \"isTraveling\": false,\n                \"isContactWithInfectedCovid19Person\": false,\n                \"haveCovid19Manifestations\": false\n            }\n        },\n        {\n            \"id\": \"60ef07f6e825ae24bcdb0588\",\n            \"isRegisterForOther\": false,\n            \"fullName\": \"Nguyen Van A\",\n            \"idCardNumber\": \"245678\",\n            \"birthYear\": \"1911\",\n            \"gender\": \"OTHER\",\n            \"nationality\": \"VIETNAMESE\",\n            \"address\": {\n                \"province\": \"A\",\n                \"district\": \"B\",\n                \"ward\": \"C\",\n                \"street\": \"D\"\n            },\n            \"phone\": \"03456782211\",\n            \"email\": \"a@gmail.com\",\n            \"personalQuestionsLast14Days\": {\n                \"isTraveling\": false,\n                \"isContactWithInfectedCovid19Person\": false,\n                \"haveCovid19Manifestations\": false\n            }\n        },\n        {\n            \"id\": \"60ef0697c24b585323b87a48\",\n            \"isRegisterForOther\": false,\n            \"fullName\": \"Nguyen Van A\",\n            \"idCardNumber\": \"245678\",\n            \"birthYear\": \"1911\",\n            \"gender\": \"OTHER\",\n            \"nationality\": \"VIETNAMESE\",\n            \"address\": {\n                \"province\": \"A\",\n                \"district\": \"B\",\n                \"ward\": \"C\",\n                \"street\": \"D\"\n            },\n            \"phone\": \"034567899111\",\n            \"email\": \"a@gmail.com\",\n            \"personalQuestionsLast14Days\": {\n                \"isTraveling\": false,\n                \"isContactWithInfectedCovid19Person\": false,\n                \"haveCovid19Manifestations\": false\n            }\n        },\n        {\n            \"id\": \"123456789098765432234\",\n            \"isRegisterForOther\": false,\n            \"fullName\": \"Nguyen Van A\",\n            \"idCardNumber\": \"245678\",\n            \"birthYear\": \"1911\",\n            \"gender\": \"OTHER\",\n            \"nationality\": \"VIETNAMESE\",\n            \"address\": {\n                \"province\": \"A\",\n                \"district\": \"B\",\n                \"ward\": \"C\",\n                \"street\": \"D\"\n            },\n            \"phone\": \"07765437882\",\n            \"email\": \"a@gmail.com\",\n            \"personalQuestionsLast14Days\": {\n                \"isTraveling\": false,\n                \"isContactWithInfectedCovid19Person\": false,\n                \"haveCovid19Manifestations\": false\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete health declaration information",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/health-declaration-information/123456789098765432234",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"health-declaration-information",
+								"123456789098765432234"
+							]
+						},
+						"description": "{{local}}/health-declaration-information/123456789098765432234"
+					},
+					"response": [
+						{
+							"name": "Delete health declaration information",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/health-declaration-information/123456789098765432234",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"health-declaration-information",
+										"123456789098765432234"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Jul 2021 08:17:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"123456789098765432234\",\n    \"responseCode\": 200,\n    \"message\": \"Successfully\",\n    \"timestamp\": \"1626337072015\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

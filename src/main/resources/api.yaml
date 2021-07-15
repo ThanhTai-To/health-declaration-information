@@ -17,7 +17,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/HealthDeclarationInformationRequest'
+              $ref: '#/components/schemas/HealthDeclarationInformationModel'
         required: true
       responses:
         200:
@@ -26,10 +26,85 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ObjectSuccessResponse'
+    get:
+      tags:
+        - getListHealthDeclarationInformation
+      summary: Get list health declaration information
+      operationId: getListHealthDeclarationInformation
+      parameters:
+        - in: query
+          name: page
+          description: page number, start at page 0, each page will return 20 items
+          schema:
+            type: integer
+            minimum: 0
+            default: 0
+          required: true
+      responses:
+        '200':
+          description: Get list health declaration information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListHealthDeclarationInformation'
+  /health-declaration-information/{id}:
+    get:
+      tags:
+        - getHealthDeclarationInformationById
+      summary: Get user health declaration information by id
+      operationId: getHealthDeclarationInformationByID
+      parameters:
+        - name: id
+          in: path
+          description: Health Declaration Information Id
+          required: true
+          schema:
+            type: string
+            format: string
+      responses:
+        '200':
+          description: Get health declaration information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthDeclarationInformationModel'
+    delete:
+      tags:
+        - deleteHealthDeclarationInformationById
+      summary: Delete user health declaration information by id
+      operationId: deleteHealthDeclarationInformationById
+      parameters:
+        - name: id
+          in: path
+          description: Health Declaration Information Id
+          required: true
+          schema:
+            type: string
+            format: string
+      responses:
+        '200':
+          description: Delete user health declaration information by id
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectSuccessResponse'
 
 components:
   schemas:
-    HealthDeclarationInformationRequest:
+    ListHealthDeclarationInformation:
+      type: object
+      properties:
+        currentPage:
+          type: integer
+        totalPage:
+          type: integer
+        totalElements:
+          type: integer
+        healthDeclarationInformations:
+          type: array
+          items:
+            $ref: '#/components/schemas/HealthDeclarationInformationModel'
+    HealthDeclarationInformationModel:
       type: object
       required:
         - fullName
@@ -41,6 +116,8 @@ components:
         - phone
         - personalQuestionsLast14Days
       properties:
+        id:
+          type: string
         isRegisterForOther:
           type: boolean
           default: false

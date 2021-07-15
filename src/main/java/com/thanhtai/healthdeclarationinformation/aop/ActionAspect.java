@@ -10,7 +10,7 @@ import org.aspectj.lang.reflect.CodeSignature;
 @Slf4j
 public class ActionAspect {
 
-    @Around("execution(* com.thanhtai.healthdeclarationinformation.service.HealthDeclarationInformationServiceImpl.getHealthDeclarationInformation(..))")
+    @Around("execution(* com.thanhtai.healthdeclarationinformation.service.HealthDeclarationInformationServiceImpl.getListHealthDeclarationInformation(..))")
     public Object logMethod(ProceedingJoinPoint joinPoint) throws Throwable {
         String methodName = joinPoint.getSignature().getName();
         Object result = null;

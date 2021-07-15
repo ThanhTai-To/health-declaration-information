@@ -1,7 +1,8 @@
 package com.thanhtai.healthdeclarationinformation.controller;
 
 import com.thanhtai.healthdeclarationinformation.api.HealthDeclarationInformationApi;
-import com.thanhtai.healthdeclarationinformation.api.model.HealthDeclarationInformationRequest;
+import com.thanhtai.healthdeclarationinformation.api.model.HealthDeclarationInformationModel;
+import com.thanhtai.healthdeclarationinformation.api.model.ListHealthDeclarationInformation;
 import com.thanhtai.healthdeclarationinformation.api.model.ObjectSuccessResponse;
 import com.thanhtai.healthdeclarationinformation.service.HealthDeclarationInformationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,29 @@ public class HealthDeclarationInformationController implements HealthDeclaration
     private HealthDeclarationInformationService healthDeclarationInfoService;
 
     @Override
-    public ResponseEntity<ObjectSuccessResponse> createInformation(@Valid HealthDeclarationInformationRequest healthDeclarationInformationRequest) {
-        String id = healthDeclarationInfoService.createHealthDeclarationInformation(healthDeclarationInformationRequest);
+    public ResponseEntity<ObjectSuccessResponse> createInformation(@Valid HealthDeclarationInformationModel healthDeclarationInformationModel) {
+        String id = healthDeclarationInfoService
+                        .createHealthDeclarationInformation(healthDeclarationInformationModel);
         ObjectSuccessResponse objectSuccessResponse = buildObjectSuccessResponse(id);
         return ResponseEntity.ok(objectSuccessResponse);
+    }
+
+    @Override
+    public ResponseEntity<ObjectSuccessResponse> deleteHealthDeclarationInformationById(String id) {
+        healthDeclarationInfoService.deleteHealthDeclarationInformationById(id);
+        ObjectSuccessResponse objectSuccessResponse = buildObjectSuccessResponse(id);
+        return ResponseEntity.ok(objectSuccessResponse);
+    }
+
+    @Override
+    public ResponseEntity<HealthDeclarationInformationModel> getHealthDeclarationInformationByID(String id) {
+        return ResponseEntity.ok(healthDeclarationInfoService.getHealthDeclarationInformation(id));
+    }
+
+    @Override
+    public ResponseEntity<ListHealthDeclarationInformation> getListHealthDeclarationInformation(Integer page) {
+        return ResponseEntity.ok(healthDeclarationInfoService
+                .getListHealthDeclarationInformation(page));
     }
 
     private ObjectSuccessResponse buildObjectSuccessResponse(String id) {
