@@ -8,6 +8,6 @@ class HealthDeclarationInformationApplicationTests {
 
     @Test
     void contextLoads() {
+        HealthDeclarationInformationApplication.main(new String[] {});
     }
-
 }
