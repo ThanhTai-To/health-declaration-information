@@ -145,7 +145,7 @@
                             </configOptions>
                             <library>spring-boot</library>
                             <apiPackage>com.thanhtai.healthdeclarationinformation.api</apiPackage>
-                            <modelPackage>com.thanhtai.healthdeclarationinformation.api.model</modelPackage>
+                            <modelPackage>com.thanhtai.healthdeclarationinformation.api.models</modelPackage>
                         </configuration>
                     </execution>
                 </executions>

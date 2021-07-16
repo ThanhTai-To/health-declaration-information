@@ -1,4 +1,4 @@
-package com.thanhtai.healthdeclarationinformation.exception;
+package com.thanhtai.healthdeclarationinformation.exceptions;
 
 public class NotFoundException extends RuntimeException {
     public NotFoundException(String exception) {

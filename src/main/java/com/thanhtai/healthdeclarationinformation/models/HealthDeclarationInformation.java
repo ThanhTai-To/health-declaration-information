@@ -1,8 +1,9 @@
-package com.thanhtai.healthdeclarationinformation.model;
+package com.thanhtai.healthdeclarationinformation.models;
 
 
-import com.thanhtai.healthdeclarationinformation.api.model.Address;
-import com.thanhtai.healthdeclarationinformation.api.model.PersonalQuestionsLast14Days;
+
+import com.thanhtai.healthdeclarationinformation.api.models.Address;
+import com.thanhtai.healthdeclarationinformation.api.models.PersonalQuestionsLast14Days;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -13,45 +14,25 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@Data
 public class HealthDeclarationInformation {
     @Id
-    @Getter
+    @Setter(AccessLevel.NONE)
     private String id;
-    @Setter
-    @Getter
     private boolean isRegisterForOther;
-    @Setter
-    @Getter
     private String fullName;
-    @Setter
-    @Getter
     private String idCardNumber;
-    @Setter
-    @Getter
     private String birthYear;
-    @Setter
-    @Getter
     private String gender;
-    @Setter
-    @Getter
     private String nationality;
-    @Setter
-    @Getter
     private Address address;
-    @Setter
-    @Getter
     private String phone;
-    @Setter
-    @Getter
     private String email;
-    @Setter
-    @Getter
     private PersonalQuestionsLast14Days personalQuestionsLast14Days;
-    @Getter
+    @Setter(AccessLevel.NONE)
     @CreatedDate
     private String createdAt;
-    @Getter
+    @Setter(AccessLevel.NONE)
     @LastModifiedDate
     private String modifiedAt;
 }

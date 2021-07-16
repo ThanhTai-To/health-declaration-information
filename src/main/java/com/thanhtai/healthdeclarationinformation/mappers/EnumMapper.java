@@ -1,4 +1,4 @@
-package com.thanhtai.healthdeclarationinformation.mapper;
+package com.thanhtai.healthdeclarationinformation.mappers;
 
 public final class EnumMapper {
 

@@ -1,9 +1,9 @@
-package com.thanhtai.healthdeclarationinformation.mapper;
+package com.thanhtai.healthdeclarationinformation.mappers;
 
-import com.thanhtai.healthdeclarationinformation.api.model.Gender;
-import com.thanhtai.healthdeclarationinformation.api.model.HealthDeclarationInformationModel;
-import com.thanhtai.healthdeclarationinformation.api.model.Nationality;
-import com.thanhtai.healthdeclarationinformation.model.HealthDeclarationInformation;
+import com.thanhtai.healthdeclarationinformation.api.models.Gender;
+import com.thanhtai.healthdeclarationinformation.api.models.HealthDeclarationInformationModel;
+import com.thanhtai.healthdeclarationinformation.api.models.Nationality;
+import com.thanhtai.healthdeclarationinformation.models.HealthDeclarationInformation;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
@@ -17,11 +17,10 @@ public interface HealthDeclarationInformationMapper {
 
     HealthDeclarationInformationMapper INSTANCE = Mappers.getMapper(HealthDeclarationInformationMapper.class);
 
-    @Mappings( value = {
-            @Mapping(target = "id", ignore = true),
-            @Mapping(target = "gender", source = "request.gender",  qualifiedByName = "genderValue"),
-            @Mapping(target = "nationality", source = "request.nationality",  qualifiedByName = "nationalityValue")
-    })
+
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "gender", source = "request.gender",  qualifiedByName = "genderValue")
+    @Mapping(target = "nationality", source = "request.nationality",  qualifiedByName = "nationalityValue")
     HealthDeclarationInformation toHealthDeclarationInformation(final HealthDeclarationInformationModel request);
 
     @Named("genderValue")
@@ -34,10 +33,8 @@ public interface HealthDeclarationInformationMapper {
         return Objects.isNull(nationality) ? null : nationality.toString();
     }
 
-    @Mappings( value = {
-            @Mapping(target = "gender", source = "healthDeclarationInformation.gender",  qualifiedByName = "genderEnum"),
-            @Mapping(target = "nationality", source = "healthDeclarationInformation.nationality",  qualifiedByName = "nationalityEnum")
-    })
+    @Mapping(target = "gender", source = "healthDeclarationInformation.gender",  qualifiedByName = "genderEnum")
+    @Mapping(target = "nationality", source = "healthDeclarationInformation.nationality",  qualifiedByName = "nationalityEnum")
     HealthDeclarationInformationModel toHealthDeclarationInformationModel(final HealthDeclarationInformation healthDeclarationInformation);
 
     @Named("genderEnum")

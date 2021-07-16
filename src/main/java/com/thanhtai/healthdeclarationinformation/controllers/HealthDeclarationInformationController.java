@@ -1,10 +1,10 @@
-package com.thanhtai.healthdeclarationinformation.controller;
+package com.thanhtai.healthdeclarationinformation.controllers;
 
 import com.thanhtai.healthdeclarationinformation.api.HealthDeclarationInformationApi;
-import com.thanhtai.healthdeclarationinformation.api.model.HealthDeclarationInformationModel;
-import com.thanhtai.healthdeclarationinformation.api.model.ListHealthDeclarationInformation;
-import com.thanhtai.healthdeclarationinformation.api.model.ObjectSuccessResponse;
-import com.thanhtai.healthdeclarationinformation.service.HealthDeclarationInformationService;
+import com.thanhtai.healthdeclarationinformation.api.models.HealthDeclarationInformationModel;
+import com.thanhtai.healthdeclarationinformation.api.models.ListHealthDeclarationInformation;
+import com.thanhtai.healthdeclarationinformation.api.models.ObjectSuccessResponse;
+import com.thanhtai.healthdeclarationinformation.services.HealthDeclarationInformationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

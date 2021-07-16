@@ -1,4 +1,4 @@
-package com.thanhtai.healthdeclarationinformation.exception;
+package com.thanhtai.healthdeclarationinformation.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

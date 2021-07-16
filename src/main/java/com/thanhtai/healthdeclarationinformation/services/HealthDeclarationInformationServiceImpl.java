@@ -1,14 +1,13 @@
-package com.thanhtai.healthdeclarationinformation.service;
+package com.thanhtai.healthdeclarationinformation.services;
 
-import com.thanhtai.healthdeclarationinformation.api.model.HealthDeclarationInformationModel;
-import com.thanhtai.healthdeclarationinformation.api.model.ListHealthDeclarationInformation;
-import com.thanhtai.healthdeclarationinformation.api.model.ObjectSuccessResponse;
-import com.thanhtai.healthdeclarationinformation.exception.AlreadyExistedException;
-import com.thanhtai.healthdeclarationinformation.exception.NotFoundException;
-import com.thanhtai.healthdeclarationinformation.mapper.HealthDeclarationInformationMapper;
-import com.thanhtai.healthdeclarationinformation.mapper.ListHealthDeclarationInformationMapper;
-import com.thanhtai.healthdeclarationinformation.model.HealthDeclarationInformation;
-import com.thanhtai.healthdeclarationinformation.repository.HealthDeclarationInfoRepository;
+import com.thanhtai.healthdeclarationinformation.api.models.HealthDeclarationInformationModel;
+import com.thanhtai.healthdeclarationinformation.api.models.ListHealthDeclarationInformation;
+import com.thanhtai.healthdeclarationinformation.exceptions.AlreadyExistedException;
+import com.thanhtai.healthdeclarationinformation.exceptions.NotFoundException;
+import com.thanhtai.healthdeclarationinformation.mappers.HealthDeclarationInformationMapper;
+import com.thanhtai.healthdeclarationinformation.mappers.ListHealthDeclarationInformationMapper;
+import com.thanhtai.healthdeclarationinformation.models.HealthDeclarationInformation;
+import com.thanhtai.healthdeclarationinformation.repositories.HealthDeclarationInfoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

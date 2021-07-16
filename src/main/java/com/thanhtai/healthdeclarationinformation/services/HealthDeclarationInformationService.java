@@ -1,7 +1,7 @@
-package com.thanhtai.healthdeclarationinformation.service;
+package com.thanhtai.healthdeclarationinformation.services;
 
-import com.thanhtai.healthdeclarationinformation.api.model.HealthDeclarationInformationModel;
-import com.thanhtai.healthdeclarationinformation.api.model.ListHealthDeclarationInformation;
+import com.thanhtai.healthdeclarationinformation.api.models.HealthDeclarationInformationModel;
+import com.thanhtai.healthdeclarationinformation.api.models.ListHealthDeclarationInformation;
 
 public interface HealthDeclarationInformationService {
     String createHealthDeclarationInformation(HealthDeclarationInformationModel createRequest);
