@@ -1,0 +1,13 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+HealthDeclarationInformation,com.thanhtai.healthdeclarationinformation.mappers,HealthDeclarationInformationMapperImpl,4,120,3,3,2,28,3,3,0,3
+HealthDeclarationInformation,com.thanhtai.healthdeclarationinformation.mappers,HealthDeclarationInformationMapper,8,29,4,4,0,5,4,5,0,5
+HealthDeclarationInformation,com.thanhtai.healthdeclarationinformation.mappers,ListHealthDeclarationInformationMapper,0,39,0,0,0,14,0,2,0,2
+HealthDeclarationInformation,com.thanhtai.healthdeclarationinformation.mappers,ListHealthDeclarationInformationMapperImpl,0,3,0,0,0,1,0,1,0,1
+HealthDeclarationInformation,com.thanhtai.healthdeclarationinformation.mappers,EnumMapper,0,10,0,2,0,4,0,3,0,2
+HealthDeclarationInformation,com.thanhtai.healthdeclarationinformation,HealthDeclarationInformationApplication,0,12,0,0,0,4,0,3,0,3
+HealthDeclarationInformation,com.thanhtai.healthdeclarationinformation.services,HealthDeclarationInformationServiceImpl,0,97,0,4,0,31,0,9,0,7
+HealthDeclarationInformation,com.thanhtai.healthdeclarationinformation.controllers,HealthDeclarationInformationController,0,59,0,0,0,17,0,6,0,6
+HealthDeclarationInformation,com.thanhtai.healthdeclarationinformation.exceptions,AlreadyExistedException,0,4,0,0,0,2,0,1,0,1
+HealthDeclarationInformation,com.thanhtai.healthdeclarationinformation.exceptions,ExceptionResponseHandler,0,45,0,0,0,9,0,3,0,3
+HealthDeclarationInformation,com.thanhtai.healthdeclarationinformation.exceptions,NotFoundException,0,4,0,0,0,2,0,1,0,1
+HealthDeclarationInformation,com.thanhtai.healthdeclarationinformation.aop,ActionAspect,6,39,0,0,2,11,0,4,0,4

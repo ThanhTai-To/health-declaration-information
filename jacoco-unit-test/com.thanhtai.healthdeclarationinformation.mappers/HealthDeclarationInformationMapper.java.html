@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HealthDeclarationInformationMapper.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HealthDeclarationInformation</a> &gt; <a href="index.source.html" class="el_package">com.thanhtai.healthdeclarationinformation.mappers</a> &gt; <span class="el_source">HealthDeclarationInformationMapper.java</span></div><h1>HealthDeclarationInformationMapper.java</h1><pre class="source lang-java linenums">package com.thanhtai.healthdeclarationinformation.mappers;
+
+import com.thanhtai.healthdeclarationinformation.api.models.Gender;
+import com.thanhtai.healthdeclarationinformation.api.models.HealthDeclarationInformationModel;
+import com.thanhtai.healthdeclarationinformation.api.models.Nationality;
+import com.thanhtai.healthdeclarationinformation.models.HealthDeclarationInformation;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.Mappings;
+import org.mapstruct.Named;
+import org.mapstruct.factory.Mappers;
+
+import java.util.Objects;
+
+@Mapper(uses = EnumMapper.class)
+public interface HealthDeclarationInformationMapper {
+
+<span class="fc" id="L18">    HealthDeclarationInformationMapper INSTANCE = Mappers.getMapper(HealthDeclarationInformationMapper.class);</span>
+
+
+    @Mapping(target = &quot;id&quot;, ignore = true)
+    @Mapping(target = &quot;gender&quot;, source = &quot;request.gender&quot;,  qualifiedByName = &quot;genderValue&quot;)
+    @Mapping(target = &quot;nationality&quot;, source = &quot;request.nationality&quot;,  qualifiedByName = &quot;nationalityValue&quot;)
+    HealthDeclarationInformation toHealthDeclarationInformation(final HealthDeclarationInformationModel request);
+
+    @Named(&quot;genderValue&quot;)
+    default String genderValue(final Gender gender) {
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">        return Objects.isNull(gender) ? null : gender.toString();</span>
+    }
+
+    @Named(&quot;nationalityValue&quot;)
+    default String nationalityValue(final Nationality nationality) {
+<span class="pc bpc" id="L33" title="1 of 2 branches missed.">        return Objects.isNull(nationality) ? null : nationality.toString();</span>
+    }
+
+    @Mapping(target = &quot;gender&quot;, source = &quot;healthDeclarationInformation.gender&quot;,  qualifiedByName = &quot;genderEnum&quot;)
+    @Mapping(target = &quot;nationality&quot;, source = &quot;healthDeclarationInformation.nationality&quot;,  qualifiedByName = &quot;nationalityEnum&quot;)
+    HealthDeclarationInformationModel toHealthDeclarationInformationModel(final HealthDeclarationInformation healthDeclarationInformation);
+
+    @Named(&quot;genderEnum&quot;)
+    default Gender genderEnum(final String gender) {
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">        return Objects.isNull(gender) ? null : Gender.valueOf(gender);</span>
+    }
+
+    @Named(&quot;nationalityEnum&quot;)
+    default Nationality nationalityEnum(final String nationality) {
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">        return Objects.isNull(nationality) ? null : Nationality.valueOf(nationality);</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
